@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>网易</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <script src="js/lie/angular.js"></script>
+    <script src="js/lie/angular-messages.js"></script>
+    <script src="js/lie/jquery-3.1.0.js"></script>
+    <script src="js/post.js"></script>
+    <!--<script src="js/index.js"></script>-->
+</head>
+<body ng-app="myapp">
+<div class="header">
+    <div class="inner">
+        <div class="header_l">
+            <div class="logo">
+                <a href="javascript:;"><img src="images/logo.jpg"/></a>
+            </div>
+            <div class="link">
+                <a href="http://www.163.com/">网易首页</a><a href="javascript:;" class="tie">跟帖广场</a>
+            </div>
+        </div>
+        <div class="header_r">
+            <div class="log">
+                <div class="login">
+                    <a href="javascript:;">登录</a>
+                </div>
+                <div class="register">
+                    <a href="javascript:;">注册网易邮箱<i></i></a>
+                </div>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="javascript:;">网易考拉<i></i></a></li>
+                    <li><a class="email" href="javascript:;"><span></span><i></i></a></li>
+                    <li><a class="rech" href="javascript:;"><span></span><i></i></a></li>
+                    <li><a class="xin" href="javascript:;"><span></span><i></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main">
+    <div class="inner clear">
+        <div class="title">
+            <h1>
+                <span>话题：</span>
+                <a href="javascript:;">山西政协原副主席令政策受贿1607万 获刑12年半</a>
+            </h1>
+        </div>
+        <div class="content clear" ng-controller="myctrl">
+            <div class="post clear">
+                <div class="post_t clear">
+                    <div class="post_l">
+                        <div class="fast">
+                            <button id="ft" type="button" ng-click="sh()">快速发帖</button>
+                        </div>
+                        <div class="square">
+                            <a href="javascript:;">去跟帖广场看看</a>
+                            <i>></i>
+                        </div>
+                    </div>
+
+                    <div class="post_r">
+                        <ul class="clear">
+                            <li><button type="button"  ng-click="last()"        ng-disabled="pageNum<=1" ng-class="pageNum<=1?'ban':''">上一页</button></li>
+                            <li><a href="javascript:;" ng-class="num==pageNum?'ac':''" ng-click="paging(num)" ng-repeat="num in conts | numfliter:pageSize">{{num}}</a></li>
+                            <!--<li><a href="javascript:;">2</a></li>-->
+                            <!--<li><a href="javascript:;">3</a></li>-->
+                            <!--<li><a href="javascript:;">4</a></li>-->
+                            <!--<li><a href="javascript:;">5</a></li>-->
+                            <li><button type="button"  ng-click="next()" ng-disabled="pageNum>=nu" ng-class="pageNum>=nu?'ban':''">下一页</button></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="show_login" ng-show="aa" >
+                    <i></i>
+                    <div class="text">
+                        <form method="post" name="shippingForm" novalidate>
+                            <textarea ng-click="empty()" id="txt" ng-model="con" >抵制低俗，文明上网，登录发帖</textarea>
+                            <div class="sub clear">
+                                <div class="sub_l">
+                                    <input type="text"  name="username" class="ema" ng-model="data.shipping.name" placeholder="邮箱账号" required/>
+                                    <div class="nam" ng-messages="shippingForm.username.$dirty&&shippingForm.username.$error">
+                                        <span class="error" ng-message="required">请输入账号</span>
+                                    </div>
+                                    <input type="password" name="passw" class="paw" placeholder="密码" required ng-model="data.shipping.paw"/>
+                                    <div class="pa" ng-messages="shippingForm.passw.$dirty&&shippingForm.passw.$error">
+                                        <span class="error" ng-message="required">请输入密码</span>
+                                    </div>
+                                </div>
+                                <div class="sub_r">
+                                    <div class="automatic">
+                                        <input type="checkbox" checked="checked"/>
+                                        <span>自动登录</span>
+                                    </div>
+                                    <button type="button" ng-disabled="shippingForm.$invalid" ng-click="publish(con)">登录并发表</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="newest">
+                <div class="tit">
+                    <div class="tit_l">
+                        <strong>最新跟帖</strong>(跟帖<span class="num">{{conts.length}}</span>条&nbsp;有<span class="people">{{partake()}}</span>人参与)
+                    </div>
+                    <div class="tit_r">
+                        <a href="javascript:;">跟帖用户自律条约</a>
+                        |
+                        <a href="javascript:;">手机也能看帖>></a>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="note clear" ng-repeat="item in conts |confilter:pageNum:pageSize">
+                        <div class="pic">
+                            <a href="javascript:;"><img ng-src="{{item.imgsrc}}"/></a>
+                        </div>
+                        <div class="txt">
+                            <div class="txt_t">
+                                <a href="javascript:;" class="name">{{item.name}}</a>
+                                <span class="ip">{{item.ip}}</span>
+                                <span class="time">{{item.time}}</span>
+                            </div>
+                            <div class="txt_m">
+                                {{item.count}}
+                            </div>
+                            <div class="txt_b">
+                                <ul class="clear">
+                                    <li><a class="praise" ng-disabled="!item.is"  ng-click="ding(item)" href="javascript:;" ng-class="!item.is?'praise ac':''" >顶<span>[{{item.top}}]</span></a></li>
+                                    <li><a class="tread" href="javascript:;">踩<span>[{{item.step}}]</span></a></li>
+                                    <li><a href="javascript:;">回复</a></li>
+                                    <li><a href="javascript:;">收藏</a></li>
+                                    <li><a href="javascript:;">分享</a></li>
+                                    <li><a href="javascript:;">复制</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post_r">
+                        <ul class="clear">
+                            <li><button type="button" ng-click="last()" ng-disabled="pageNum<=1" ng-class="pageNum<=1?'ban':''">上一页</button></li>
+                            <li><a href="javascript:;" ng-class="num==pageNum?'ac':''" ng-click="paging(num)" ng-repeat="num in conts | numfliter:pageSize">{{num}}</a></li>
+                            <!--<li><a href="javascript:;">2</a></li>-->
+                            <!--<li><a href="javascript:;">3</a></li>-->
+                            <!--<li><a href="javascript:;">4</a></li>-->
+                            <!--<li><a href="javascript:;">5</a></li>-->
+                            <!--<li><span ng-click="next()" ng-disabled="dis==false">下一页</span></li>-->
+                            <li><button type="button" ng-click="next()" ng-disabled="pageNum>=nu" ng-class="pageNum>=nu?'ban':''">下一页</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="hot">
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,450 @@
+*{margin:0;padding:0;border:0;}
+a{text-decoration:none;}
+i,em{font-style: normal;}
+li{list-style-type:none;}
+img input{border: none;display: none;}
+input,button{outline: none;}
+img{display: block;}
+.clear:after{content:'.';display:block;width: 0;height: 0;overflow:hidden;clear: both;}
+.clear{zoom: 1;}
+h1,h2,h3,h4,h5{font-weight: normal;}
+body{font-family: "microsoft yahei";}
+.header .inner{
+	width: 960px;
+	margin: 0 auto;
+}
+.header{
+	width: 100%;
+	height: 42px;
+	line-height: 42px;
+	background: #333;
+	border-bottom: 3px solid #606060;
+	position: fixed;
+	z-index: 999;
+	font-size: 12px;
+}
+.header .header_l{
+	float: left;
+}
+.header .header_l .logo{
+	float: left;
+	width: 100px;
+	margin-right: 5px;
+}
+.header .header_l .link{
+	float: left;
+	text-align: left;
+}
+.header .header_l .link a{
+	color: #fff;
+	padding:0 7px;
+}
+.header .header_l .link .tie{
+	border-left: #4f4f4f solid 1px;
+}
+.header .header_r{
+	float: right;
+}
+.header .header_r .log{
+	float: left;
+}
+.header .header_r .log .login{
+	float: left;
+	width: 64px;
+	height: 45px;
+	border-bottom: 4px solid #8f2f2f;
+	background-color: #e11515;
+	text-align: center;
+}
+.header .header_r .log .login a{
+	display: block;
+	color: #fff;
+}
+.header .header_r .log .register{
+	float: left;
+}
+.header .header_r .log .register a{
+	padding: 0 30px 0 12px;
+	display: block;
+	height: 42px;
+	color: #fff;
+	position: relative;
+}
+.header .header_r .log .register a i{
+	display: block;
+	border: 4px solid transparent;
+	border-top-color:rgb(162, 165, 164) ;
+	position: absolute;
+	top: 21px;
+	right: 15px;
+}
+.header .header_r .nav{
+	float: left;
+	
+}
+.header .header_r li:first-child a{
+	margin-top: 0;
+}
+.header .header_r li{
+	float: left;
+	border-left: 1px solid #3f3f3f;
+    border-right: 1px solid #1f1f1f;
+	position: relative;
+}
+.header .header_r li a{
+	padding: 0 18px 0 13px;
+	color: #fff;
+	display: block;
+	font-size: 14px;
+	height: 32px;
+}
+.header .header_r li a i{
+	display: block;
+	border: 4px solid transparent;
+	border-top-color:rgb(162, 165, 164) ;
+	position: absolute;
+	top: 21px;
+	right: 5px;
+}
+.header .header_r li a span{
+	display: block;
+	margin-top: 10px;
+	width: 25px;
+    height: 23px;
+    background: url(../images/nav_sprite_v34.png) no-repeat;
+}
+.header .header_r li .email span{
+	background-position: 0 -23px;
+}
+.header .header_r li .rech span{
+	background-position: 0 -46px;
+}
+.header .header_r li .xin span{
+	background-position: 0 -92px;
+}
+.main{
+	padding-top: 80px;
+	margin-bottom: 20px;
+}
+.main .inner{
+	width: 1000px;
+	margin: 0 auto;
+}
+.main .title h1{
+	text-align: center;
+	font-size: 25px;
+	color: #1f3a87;
+}
+.main .title h1 a{
+	color: #1f3a87;
+}
+.main .content{
+	width: 699px;
+	margin: 0 auto;
+	border:1px solid #C4D6EC ;
+	padding-bottom: 12px;
+	margin-bottom: 30px;
+	margin-top: 25px;
+}
+.main .content .post{
+	margin: 0 20px 10px;
+}
+.main .content .post .post_t{
+	margin-top: 11px;
+}
+.main .content .post .post_l{
+	float: left;
+}
+.main .content .post .post_l .fast{
+	float: left;
+}
+.main .content .post .post_l .fast button{
+	width: 81px;
+    height: 25px;
+    line-height: 25px;
+	background: url(../images/sprites_2.8.png) no-repeat 0 -65px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: bold;
+}
+.main .content .post .post_l .square{
+	float: left;
+	margin-left: 8px;
+	position: relative;
+}
+.main .content .post .post_l .square a{
+	display: block;
+	width: 92px;
+    height: 25px;
+    line-height: 25px;
+    font-weight: normal;
+    font-size: 12px;
+    color: #000;
+    padding: 0 12px 0 6px;
+    background: url(../images/sprites_2.8.png) no-repeat 0 -466px;
+}
+.main .content .post .post_l .square i{
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 6px;
+}
+.main .content .post_r{
+	float: right;
+}
+.main .content .post_r li{
+	float: left;
+
+}
+.main .content .post_r li button{
+	padding: 0 10px;
+	border:1px solid #ccc;
+	display:inline-block;
+	line-height: 18px;
+	font-size: 12px;
+	cursor: pointer;
+	color: #1e50a2;
+	margin: 0 5px;
+	background: #fff;
+}
+.main .content .post_r li span{
+	padding: 0 10px;
+	border:1px solid #ccc;
+	display:inline-block;
+	height: 18px;
+	line-height: 18px;
+	font-size: 12px;
+	cursor: pointer;
+	color: #1e50a2;
+	margin: 0 5px;
+}
+.main .content .post_r li a{
+	padding: 0 5px;
+	border:1px solid #ccc;
+	display: inline-block;
+	height: 18px;
+	line-height: 18px;
+	font-size: 12px;
+	color: #1e50a2;
+	margin: 0 4px;
+}
+.main .content .post_r li a:hover{
+	background: #1e50a2;
+	color: #fff;
+}
+.main .content .post_r li .ac{
+	background: #1e50a2;
+	color: #fff;
+}
+.main .content .post .show_login{
+	margin-top: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #c4d6ec;
+    position: relative;
+}
+.main .content .post .show_login i{
+	display: block;
+	width: 14px;
+	height: 10px;
+	background: url(../images/sprites_2.8.png) no-repeat -86px -151px;
+	position: absolute;
+	top: -8px;
+	left: 30px;
+}
+.main .content .post .show_login textarea{
+	resize:none;
+	display: block;
+	height: 105px;
+	border-bottom: 1px solid #c4d6ec;
+	width: 99.4%;
+	padding: 3px 2px 0;
+	background: url(../images/post_body_bg.gif) no-repeat 50% 50%;
+	color: #666;
+	font-size: 14px;
+}
+.main .content .post .show_login .sub{
+	padding: 8px 5px;
+	background: #f1f7fc;
+}
+.main .content .post .show_login .sub .sub_l{
+	float: left;
+	position: relative;
+}
+
+
+.main .content .post .show_login .sub .sub_l input{
+	height: 20px;
+	line-height: 20px;
+	border: 1px solid #c4d6ec;
+    padding: 3px;
+    color: rgb(153, 153, 153);
+    width: 124px;
+}
+.main .content .post .show_login .sub .sub_l .ema{
+	margin-right: 8px;
+}
+
+.main .content .post .show_login .sub .sub_r{
+	float: right;
+	height: 26px;
+	line-height: 26px;
+}
+.main .content .post .show_login .sub .sub_r .automatic{
+	float: left;
+	font-size: 14px;
+	padding-top: 2px;
+}
+.main .content .post .show_login .sub .sub_r .automatic input{
+	vertical-align: middle;
+}
+.main .content .post .show_login .sub .sub_r .automatic span{
+	vertical-align: middle;
+}
+.nam{
+	position: absolute;
+	top:-21px;
+	left: 30px;
+	border: 1px solid #fadad5;
+	background: #fadad5;
+	font-size: 12px;
+	color: #ba2636;
+}
+.pa{
+	position: absolute;
+	top:-21px;
+	left: 176px;
+	border: 1px solid #fadad5;
+	background: #fadad5;
+	font-size: 12px;
+	color: #ba2636;
+}
+.main .content .post .show_login .sub .sub_r button{
+	height: 26px;
+    line-height: 26px;
+    width: 80px;
+    background: url(../images/sprites_2.7.png) no-repeat 0 -172px;
+    margin-left: 8px;
+    cursor: pointer;
+    
+}
+.main .content .newest{
+	font-size: 12px;
+}
+.main .content .newest .tit{
+	background: #e5eef8;
+	border-top: 1px solid #c4d6ec;
+	height: 38px;
+	line-height: 36px;
+	padding: 0 18px;
+}
+.main .content .newest .tit .tit_l{
+	float: left;
+}
+.main .content .newest .tit .tit_l strong{
+	font-size: 18px;
+	font-weight: normal;
+	margin-right: 8px;
+}
+.main .content .newest .tit .tit_l span{
+	color: #ba2636;
+	font-weight: bold;
+}
+.main .content .newest .tit .tit_r{
+	float: right;
+}
+.main .content .newest .tit .tit_r a{
+	padding: 0 5px;
+	color: #1e50a2;
+}
+.main .content .newest .tit .tit_r a:hover{
+	color: #ba2636;
+	text-decoration: underline;
+}
+.main .content .newest .cont{
+	padding: 0 20px;
+}
+.main .content .newest .cont .note{
+	padding:16px 0 18px 0;
+	padding-left: 48px;
+	border-bottom: 1px dotted #afafb0;
+}
+.main .content .newest .cont .note .pic{
+	width: 48px;
+	float: left;
+	margin-left: -48px;
+	margin-top: 10px;
+}
+.main .content .newest .cont .note .pic a{
+	height: 40px;
+	width: 40px;
+	display: block;
+}
+.main .content .newest .cont .note .pic img{
+	height: 40px;
+	width: 40px;
+	border-radius:50% ;
+}
+.main .content .newest .cont .note .txt_t{
+	height: 30px;
+	line-height: 30px;
+}
+.main .content .newest .cont .note .txt_t .name{
+	color: #1e50a2;
+}
+.main .content .newest .cont .note .txt_t span{
+	
+	color: #666;
+}
+.main .content .newest .cont .note .txt_t .time{
+	float: right;
+}
+.main .content .newest .cont .note .txt_m{
+	padding: 12px 0;
+	font-size: 14px;
+	white-space: normal;
+	word-break: break-all;
+}
+.main .content .newest .cont .note .txt_b{
+	float: right;
+	height: 26px;
+	line-height: 26px;
+}
+.main .content .newest .cont .note .txt_b li{
+	float: left;
+	margin: 0 5px;
+
+}
+.main .content .newest .cont .note .txt_b li a{
+	color: #1e50a2;
+}
+.main .content .newest .cont .note .txt_b li a:hover{
+	color: #ba2636;
+	text-decoration: underline;
+}
+.main .content .newest .cont .note .txt_b li .ac{
+	color: #ccc;
+	cursor: text;
+}
+.main .content .newest .cont .note .txt_b li .ac:hover{
+	color: #ccc;
+	text-decoration: none;
+}
+.main .content .newest .cont .note .txt_b li .praise span{
+	color: #ba2636;
+	margin-left: 2px;
+	background: #fff;
+}
+.main .content .newest .cont .note .txt_b li .tread span{
+	color: #080;
+	background: #fff;
+	margin-left: 2px;
+}
+.main .content .newest .cont .post_r{
+	height: 20px;
+	padding-top: 10px;
+}
+.main .content .post_r li .ban{
+	cursor: text;
+	color: #ccc;
+}
